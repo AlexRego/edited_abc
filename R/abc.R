@@ -52,7 +52,7 @@ abc <- function(target, param, sumstat, tol, method, hcorr = TRUE,
     }
     snp <- target
     P <- read.table("pLentilSnps.txt",skip=1)
-    target <- P[snp,3:6]
+    target <- P[snp,c(3:6)]
     
     if(is.data.frame(param)) param <- as.matrix(param)
     if(is.data.frame(sumstat)) sumstat <- as.matrix(sumstat)
