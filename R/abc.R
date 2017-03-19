@@ -199,9 +199,7 @@ abc <- function(target, param, sumstat, tol, method, hcorr = TRUE,
     cond2 <- !any(statvar)
     
     if(cond2 && !rejmethod){
-      rejects <- snp
-      write.table(rejects,'rejects.txt',row.names=FALSE,col.names=FALSE,quote=FALSE,append=TRUE)
-      abc(target,param,sumstat,tol,method='rejection')
+      return 1
     }
     if(rejmethod){
         if(cond2) warning("Zero variance in the summary statistics in the selected region. Check summary statistics, consider larger tolerance.")
