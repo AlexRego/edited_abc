@@ -22,7 +22,7 @@
 #
 ######################################################################
 
-edited_abc <- function(target, param, sumstat, tol, method, hcorr = TRUE,
+abc <- function(target, param, sumstat, tol, method, hcorr = TRUE,
                 transf = "none", logit.bounds = c(0,0), subset = NULL,
                 kernel = "epanechnikov", numnet = 10, sizenet = 5,
                 lambda = c(0.0001,0.001,0.01), trace = FALSE, maxit =
