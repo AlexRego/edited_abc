@@ -198,9 +198,10 @@ abc <- function(target, param, sumstat, tol, method, hcorr = TRUE,
     statvar <- as.logical(apply(cbind(sumstat[wt1,]), 2, function(x) length(unique(x))-1))
     cond2 <- !any(statvar)
     
-    if(cond2 && !rejmethod)
+    if(cond2 && !rejmethod){
       write.table(snp,'rejects.txt',row.names=FALSE,col.names=FALSE,quote=FALSE,append=TRUE)
       return(1)
+    }
     if(rejmethod){
         if(cond2) warning("Zero variance in the summary statistics in the selected region. Check summary statistics, consider larger tolerance.")
         weights <- rep(1,length=sum(wt1))
