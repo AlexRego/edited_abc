@@ -52,8 +52,9 @@ abc <- function(target, param, sumstat, tol, method, hcorr = TRUE,
     }
     snp <- target
     P <- read.table("pLentilSnps.txt",skip=1)
-    target <- P[snp,c(3:6)]
-    
+    ## target <- P[snp,c(3:6)] for unconstrained and only first epoch
+    target <- P[snp,-c(1,2)]
+    ## for normal summary with all epochs
     if(is.data.frame(param)) param <- as.matrix(param)
     if(is.data.frame(sumstat)) sumstat <- as.matrix(sumstat)
     if(is.list(target)) target <- unlist(target)
